@@ -1,0 +1,31 @@
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    width: 17%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F7F8F8;
+    border-radius: 20px;
+}
+.card p {
+    width: 70%;
+    min-height: 70px;
+    overflow: auto;
+    
+    margin: auto;
+}
+/* .counter{
+    width: 80%;
+} */
+.card .counter {
+    width: 80%;
+}

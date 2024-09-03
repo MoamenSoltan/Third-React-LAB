@@ -1,0 +1,16 @@
+.counter{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+    padding: 5px 0px;
+    border-radius: 30px;
+    background-color: beige;
+
+}
+.counter button {
+    background-color: yellow;
+   
+    border-radius: 50%;
+}
