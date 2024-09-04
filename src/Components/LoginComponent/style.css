@@ -12,7 +12,7 @@ body {
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
-    text-align: right;
+    text-align: right;/*the label adjustment*/
 }
 
 form {
@@ -26,7 +26,8 @@ form div {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    width: 100%; 
+    width: 100%; /*important for the even spacing after label*/
+    /*always specify width with flex*/
     margin-bottom: 20px;
 }
 
@@ -37,7 +38,15 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    flex: 1; 
+    flex: 1; /*short hand for flex grow and shrink , meaning the element should take up the remaining space (vertically if direction is column and horizontally if row) if the parent div has extra space */
+    /*Here’s what flex: 1 does in detail:
+
+flex-grow (1): This allows the element to grow and take up available space proportionally within a flex container. When you set flex: 1, it means the element will take up any remaining space within the flex container. In your case, the input fields will expand to fill up space left over after accommodating the label and other elements in the same container.
+
+flex-shrink (1): This allows the element to shrink proportionally if the flex container is too small. If there isn't enough space for all elements, the input field will shrink to fit within the container.
+
+flex-basis (0%): This sets the initial size of the element before any growing or shrinking occurs. 0% means that the element's initial size is determined entirely by flex-grow and flex-shrink, not by its content or width.*/
+    
     padding: 8px; 
     font-size: 16px;
     border-radius: 5px;

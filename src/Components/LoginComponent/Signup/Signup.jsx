@@ -9,8 +9,8 @@ class Signup extends Component {
             submit:false,
             user:'',
             password :'',
-            email:''
-
+            email:'',
+            timeStamp:null
         }
     }
 
@@ -26,7 +26,9 @@ class Signup extends Component {
 
     handleSubmitSignUp=(event)=>{
         event.preventDefault()
-       this.setState({submit:true})
+       this.setState({submit:true,
+        timeStamp:new Date().toLocaleString()
+       })
     }
     handleEmailChange=(event)=>{
         this.setState({email:event.target.value})
@@ -35,7 +37,9 @@ class Signup extends Component {
     render () {
         if(this.state.submit){
             return (
-                <Details user={this.state.user} pass={this.state.password} email={this.state.email}/>
+                <Details user={this.state.user} pass={this.state.password} email={this.state.email} time={this.state.timeStamp}/>
+                          /**to pass functions or states to child components , use props */
+
             )
         }
         return (
@@ -68,7 +72,7 @@ class Signup extends Component {
 
                 <button type="submit">Submit</button>
             </form>
-            <button className="signUp" onClick={this.props.toggleHasAccount} >Already have an account?</button>{/**invoke function in props to dynamically change value */}
+            <button className="signUp" onClick={this.props.toggleHasAccount} >Already have an account?</button>{/**invoke function in parent component to dynamically change value */}
         </div>)
         
     }

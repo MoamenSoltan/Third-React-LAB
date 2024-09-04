@@ -7,8 +7,8 @@ class Login extends Component {
         this.state= {
             submit:false,
             user:'',
-            password :''
-            
+            password :'',
+            timeStamp:null/**default value of null not '' */
 
         }
     }
@@ -23,7 +23,9 @@ class Login extends Component {
 
     handleSubmitLogIn=(event)=>{
         event.preventDefault()
-        this.setState({submit:true})
+        this.setState({submit:true,
+            timeStamp:new Date().toLocaleString()/**a new date object ,like const time=new Date() ,tolocalestring is for formatting ,  */
+        })/**change submit value */
     }
 
     
@@ -32,7 +34,9 @@ class Login extends Component {
     render () {
         if(this.state.submit) {/**conditional rendering using if else here and not ternary operator */
             return (
-                <Details user={this.state.user} pass={this.state.password} />
+                <Details user={this.state.user} pass={this.state.password} time={this.state.timeStamp} />
+                          /**to pass functions or states to child components , use props */
+
             )
         }
         return (
